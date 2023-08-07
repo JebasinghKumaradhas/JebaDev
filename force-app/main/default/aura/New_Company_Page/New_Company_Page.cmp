@@ -1,0 +1,32 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,lightning:isUrlAddressable" access="global" >	
+    <aura:handler event="c:SaveCompanyEvent" action="{!c.handleComponentEvent}"/>
+    <lightning:overlayLibrary aura:id="popuplib"/>
+    <lightning:navigation aura:id="navigationService"/>
+    <aura:attribute name="recordTypeId" type="Id" />
+    <aura:registerEvent name="SaveCompanyRecEvent" type="c:SaveCompanyRecordEvent"/>
+    <aura:attribute name="newCompany" type="List" default="[,,Name,Type,Priority_Tier__c,AnnualRevenue,LegalStructure__c,Client_Segment2__c,PNAICS_Code__c,Industry__c,PSIC_Code__c,Description,cRisk_ExpectedAnnualRevenue__c,Senior_Coverage_Officer__c,Is_this_Phase_2_company__c]" />
+    <aura:attribute name="newContact" type="List" default="" />
+    
+    <lightning:recordForm 
+                          aura:id="companyCreateForm" 
+                          objectApiName="Account" 
+                          fields="{!v.newCompany}"
+                          recordTypeId="{!v.recordTypeId}"
+                          columns="2"
+                          mode="edit"         
+                          oncancel="{!c.onCancel}" 
+                          onsubmit="{!c.handleSubmit}" 
+                          onsuccess="{!c.handleSuccessMessage}"                />
+    <!--
+    <lightning:recordForm 
+                          recordId = "{! v.recordId}"
+                          aura:id="contactForm" 
+                          objectApiName="Contact" 
+                          fields="{!v.newContact}"
+                          columns="2"
+                          mode="edit"         
+                          oncancel="{!c.onCancel}" 
+                          onsubmit="{!c.handleSubmit}" 
+                          onsuccess="{!c.handleSuccessMessage}"                />
+	-->
+</aura:component>

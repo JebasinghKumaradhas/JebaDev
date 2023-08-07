@@ -1,0 +1,35 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="selectedLookUpRecord" type="sObject" default="{}"/>
+    <aura:attribute name="edit" type="boolean" default="false"/>
+    <aura:attribute name="customerLookupEdit" type="boolean" default="false"/>
+    <aura:handler name="SelectedValue" event="c:SelectedLookupRecord" action="{!c.handleComponentEvent1}"/>
+    <aura:attribute name="selectedRecord" type="Account" default="" description="Use,for store SELECTED sObject Record"/>
+    
+    <div class="slds">   
+        <div class="slds-medium-size_1-of-2 slds-large-size_1-of-2   slds-p-horizontal_x-large slds-p-bottom_small"  >
+            <span class="mtitle   slds-text-heading--small spnlabelwidth">Customer </span>
+            
+            <aura:if isTrue="{!v.edit}">
+                <aura:if isTrue="{!v.selectedRecord == null}" >
+                    <ui:outputText class="slds-text-body_regular slds-p-right_x-large" value="{!v.BuildDetail.Consumer__r.Name}" aura:id="consumerName"/>
+                    <input type="hidden" value="{!v.BuildDetail.Consumer__c}" id="custNum" />
+                    <lightning:buttonIcon onclick="{!c.setEditTrue}" iconName="utility:edit" variant="bare" size="medium" alternativeText="Edit" class="slds-button slds-input__icon" />
+                    <aura:if isTrue="{!v.BuildDetail.Consumer__r.Name != null}" >
+                        <lightning:buttonIcon onclick="{!c.removecustomer}" iconName="utility:delete" variant="bare" size="medium" alternativeText="Edit" class="slds-button slds-input__icon" />
+                    </aura:if>
+                    <aura:set attribute="else">
+                        <ui:outputText class="slds-text-body_regular slds-p-right_x-large" value="{!v.selectedCustomer}" aura:id="consumerName"/>
+                        <lightning:buttonIcon onclick="{!c.setEditTrue}" iconName="utility:edit" variant="bare" size="medium" alternativeText="Edit" class="slds-button slds-input__icon" />
+                    </aura:set>
+                </aura:if>                                                
+                <aura:if isTrue="{!v.customerLookupEdit}" >
+                    <c:SObjectLookupRecord objectAPIName="account" IconName="standard:account" selectedRecord="{!v.selectedLookUpRecord}" label=""/>
+                </aura:if>
+                <aura:set attribute="else">
+                    <c:SObjectLookupRecord objectAPIName="account" IconName="standard:account" selectedRecord="{!v.selectedLookUpRecord}" label=""/>
+                </aura:set>
+            </aura:if>
+        </div>
+    </div>
+</aura:component>

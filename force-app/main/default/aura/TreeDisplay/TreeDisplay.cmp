@@ -1,0 +1,71 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="TreeDisplay">
+    <ltng:require styles="/resource/SLDS231/assets/styles/salesforce-lightning-design-system.css" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="account" type="Account[]"/>
+    
+    <div class="slds">
+        <table class="slds-table slds-table_bordered slds-tree slds-table_tree" role="treegrid" aria-readonly="true">
+            <thead>
+                <tr class="slds-text-title_caps">
+                    <th class="slds-cell-buffer_left" scope="col">
+                        <div class="slds-grid slds-grid_vertical-align-center">
+                            <button class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small slds-m-right_x-small slds-shrink-none slds-table_tree__toggle" tabindex="-1" title="Expand all rows">
+                                <span class="slds-assistive-text">Expand all rows</span>
+                            </button>
+                            <div class="slds-truncate" title="Account Name">Account Name</div>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Type">Type</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Phone Number">Phone Number</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Account Number">Account Number</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Annual Revenue">Annual Revenue</div>
+                    </th>
+                    <th class="slds-cell-shrink" scope="col">
+                        <button class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small" aria-haspopup="true" tabindex="-1" title="Show More">
+                            <span class="slds-assistive-text">Show More</span>
+                        </button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.account}" var="acc">
+                    <tr aria-level="1" aria-posinset="1" aria-setsize="4" class="slds-hint-parent" tabindex="0">
+                        <th class="slds-tree__item" data-label="Account Name" scope="row">
+                            <!-- <button class="slds-button slds-button_icon slds-button_icon slds-button_icon-x-small slds-m-right_x-small slds-is-disabled" aria-hidden="true" tabindex="-1" title="Expand Rewis Inc"> -->
+                            <button class="slds-button slds-m-right_x-small">
+                                <lightning:icon iconName="utility:chevronright" size="x-small" />
+                                <span class="slds-assistive-text">Collapse Rewis Inc</span>
+                            </button>
+                            <div class="slds-truncate" title="Rewis Inc"><a href="javascript:void(0);" tabindex="-1">{!acc.Name}</a></div>
+                        </th>
+                        <td data-label="Type" role="gridcell">
+                            <div class="slds-truncate" title="3,100">{!acc.type }</div>
+                        </td>
+                        <td data-label="Phone Number" role="gridcell">
+                            <div class="slds-truncate" title="837-555-1212">{!acc.Phone}</div>
+                        </td>
+                        <td data-label="Account Number" role="gridcell">
+                            <div class="slds-truncate" title="Jane Doe">{!acc.AccountNumber}</div>
+                        </td>
+                        <td data-label="Annual Revenue" role="gridcell">
+                            <div class="slds-truncate" title="Phoenix, AZ">{!acc.AnnualRevenue}</div>
+                        </td>
+                        <td class="slds-cell-shrink" role="gridcell">
+                            <button class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small" aria-haspopup="true" tabindex="-1" title="More actions for Rewis Inc">
+                                <span class="slds-assistive-text">More actions for Rewis Inc</span>
+                            </button>
+                        </td>
+                    </tr>
+                </aura:iteration>
+                
+            </tbody>
+        </table>	
+    </div>
+</aura:component>

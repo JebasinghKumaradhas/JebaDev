@@ -1,0 +1,30 @@
+.THIS .mahindrared{
+    color:#e51837;
+}
+
+.THIS h1{font-size:25px;}
+
+.THIS h2{font-size:20px;}
+
+.THIS .greybg{background:#efefef}
+
+.THIS .btn-primary {
+    background: #e51837 none repeat scroll 0 0;
+    border: medium none;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 6px 15px;
+    text-decoration: none; 
+    transition:0.3s all;
+    font-size:1rem;
+    border-radius:4px;
+}
+.THIS .btn-primary:hover{background:#cc6600}
+
+.THIS .imgsize{
+  display:inline-block; 
+    /*width:150px;
+    height:125px;*/
+    width:250px;
+    height:140px;
+}

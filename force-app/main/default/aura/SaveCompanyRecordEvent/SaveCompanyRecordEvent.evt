@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="Stores the Company Record Id when new company is created" >
+    <aura:attribute name="companyRecordId" type="object" required="true" description="To pass value from child to parent" />
+    <!--<aura:attribute name="CompanyRecordTypeId" type="String" required="true" description="" /> -->
+</aura:event>

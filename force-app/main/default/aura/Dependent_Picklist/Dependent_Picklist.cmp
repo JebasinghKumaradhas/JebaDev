@@ -1,0 +1,33 @@
+<aura:component controller="Dependent_Picklist" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="objInfo" type="Model__c" default="{sobjectType : 'Model__c'}" />
+    <!-- <aura:attribute name="activityService" type="Model__c"/> 
+    <aura:attribute name="activityService" type="Package__c"/> -->
+    <div class="slds">
+        <h1 class="mtitle mahindrared slds-p-around_x-Small">Inventory Details</h1>
+        <div class="slds-m-around_x-large vclebrd">
+            <div class="slds-form slds-form_horizontal slds-m-around_small">
+                <div class="slds-grid slds-wrap slds-grid_pull-padded">
+                    <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_3-of-12 slds-large-size_3-of-12">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="year">Model</label>
+                            <div class="slds-form-element__control">
+                                <ui:inputSelect aura:id="optModel" class="slds-select" change="{!c.onSelectChange}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_3-of-12 slds-large-size_3-of-12">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="year">Package</label>
+                            <div class="slds-form-element__control">
+                                <ui:inputSelect aura:id="optPackage" class="slds-select" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</aura:component>

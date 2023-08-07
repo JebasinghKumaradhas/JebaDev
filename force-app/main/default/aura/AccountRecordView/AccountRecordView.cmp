@@ -1,0 +1,12 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="recordId" type="Id"/>
+    <h1>Record ID Test :</h1>
+     <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Account">
+        <div class="slds-box slds-theme_default">
+            <lightning:outputField fieldName="Name" />
+            <lightning:outputField fieldName="Phone"/>
+            <lightning:outputField fieldName="PersonEmail" />
+            <lightning:outputField fieldName="PersonBirthdate" />
+        </div>
+    </lightning:recordViewForm>
+</aura:component>

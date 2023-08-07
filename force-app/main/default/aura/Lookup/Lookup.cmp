@@ -1,0 +1,60 @@
+<aura:component controller="Lookup" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <div class="slds">
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="combobox-unique-id-24">Search</label>
+            <div class="slds-form-element__control">
+                <div class="slds-combobox_container slds-has-inline-listbox">
+                    <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                        <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_left-right" role="none">
+                            <span class="slds-icon_container slds-icon-standard-account slds-combobox__input-entity-icon" title="account">
+                                
+                                <span class="slds-assistive-text">account Salesforce.com, Inc.</span>
+                            </span>
+                            <input type="text" class="slds-input slds-combobox__input slds-combobox__input-value" id="combobox-unique-id-24" aria-autocomplete="list" aria-controls="listbox-unique-id" autocomplete="off" role="textbox" placeholder="Search Salesforce" readonly=""
+                                   value="Salesforce.com, Inc." />
+                            <button class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Remove selected option">
+                                
+                                <span class="slds-assistive-text">Remove selected option</span>
+                            </button>
+                        </div>
+                        <!--
+                        <div id="listbox-unique-id" role="listbox">
+                            <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid" role="presentation">
+                                <li role="presentation" class="slds-listbox__item">
+                                    <div id="listbox-option-unique-id-01" class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+                                        <span class="slds-media__figure">
+                                            <span class="slds-icon_container slds-icon-standard-account" title="Description of icon when needed">
+                                                
+                                                <span class="slds-assistive-text">Description of icon when needed</span>
+                                            </span>
+                                        </span>
+                                        <span class="slds-media__body">
+                                            <span class="slds-listbox__option-text slds-listbox__option-text_entity">Acme</span>
+                                            <span class="slds-listbox__option-meta slds-listbox__option-meta_entity">Account • San Francisco</span>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li role="presentation" class="slds-listbox__item">
+                                    <div id="listbox-option-unique-id-02" class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta" role="option">
+                                        <span class="slds-media__figure">
+                                            <span class="slds-icon_container slds-icon-standard-account" title="Description of icon when needed">
+                                                
+                                                <span class="slds-assistive-text">Description of icon when needed</span>
+                                            </span>
+                                        </span>
+                                        <span class="slds-media__body">
+                                            <span class="slds-listbox__option-text slds-listbox__option-text_entity">Salesforce.com, Inc.</span>
+                                            <span class="slds-listbox__option-meta slds-listbox__option-meta_entity">Account • San Francisco</span>
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</aura:component>
